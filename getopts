@@ -1,0 +1,18 @@
+#!/bin/bash
+
+while getopts "c:f:" opt; do
+    case "$opt" in
+        c)  # convert from celsius to farenheit
+            result=$(echo "scale=2; ($OPTARG * (9/5)) + 32" | bc)
+            ;;
+        f)  # convert from fahrenheit to celsius
+            result=$(echo "scale=2; ($OPTARG - 32) * (5/9)" | bc)
+            ;;
+        /?) 
+            echo "Invalid option provided"
+            ;;
+    esac
+    echo "$result"
+done
+
+exit 0

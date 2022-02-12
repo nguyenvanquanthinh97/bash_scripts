@@ -1,0 +1,8 @@
+#!/bin/bash
+read -t 5 -p "$( echo -e '\nInput your first name within 5 seconds: ')" name
+read -n 2 -p "$( echo -e '\nInput your age (max 2 digits): ')" age
+read -s -n 5 -p "$( echo -e '\nEnter your zip code (exactly 5 digits): ')" zipcode
+
+echo -e "\n$name, $age, $zipcode"
+
+exit 0
